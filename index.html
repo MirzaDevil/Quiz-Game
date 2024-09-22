@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login/Signup Forms -->
+        <div id="auth-container">
+            <div class="auth-form">
+                <h1>Quiz Game</h1>
+                <div id="login-form">
+                    <h2>Login</h2>
+                    <input type="email" id="login-email" placeholder="Email" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <button onclick="login()">Login</button>
+                    <p>Don't have an account? <a href="#" onclick="toggleAuth()">Signup here</a></p>
+                </div>
+                <div id="signup-form" style="display: none;">
+                    <h2>Signup</h2>
+                    <input type="email" id="signup-email" placeholder="Email" required>
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                    <button onclick="signup()">Signup</button>
+                    <p>Already have an account? <a href="#" onclick="toggleAuth()">Login here</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Interface -->
+        <div id="quiz-container" style="display: none;">
+            <div class="header">
+                <div id="timer">Time Left: <span id="time">10</span>s</div>
+                <button id="theme-toggle" onclick="toggleTheme()">Light/Dark Mode</button>
+            </div>
+            <button id="logout-button" onclick="logout()" style="display: none;">Logout</button> <!-- Moved Logout Button -->
+            <div id="progress-bar">
+                <div id="progress"></div>
+            </div>
+            <div id="question-container"></div>
+            <button id="next-question" onclick="nextQuestion()" style="display: none;">Next Question</button> <!-- Next Question Button -->
+            <div id="result-container" style="display: none;">
+                <h3>Your Score: <span id="score"></span>/<span id="total-questions"></span></h3>
+                <div id="score-bar-container">
+                    <div id="score-bar"></div>
+                </div>
+                <button onclick="startQuiz()">Restart Quiz</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
